@@ -46,3 +46,8 @@ Let's look at the variable interactions in group 24. We can look at the differen
 ![Group 24 first 3 dimensions](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/visual_of_first_3_dim_of_group_24.JPG)
 
 Each row here shows a dimension of the manifold. Each column shows the value of the perturbed dimension using quantiles of the data. Note that all the images in the middle column look the same since they are just the average image.
+
+When we look at which variables are varying the most for a given dimension we find the variable interactions associated with it. When we plot the related variables found by varying the first 3 dimensions we get the variables seen below.
+
+![Group 24 related variables first 3 dimensions](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/related_vars_first_3_dim_group_24.JPG)
+
