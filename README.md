@@ -37,5 +37,8 @@ Local Corex separates data into localized groups as explained in the previous se
 With the previously described architexture we can train an autoencoder on a local partition. Then we can take the average representation in the reduced representation space (bottleneck) and perturb just one dimension at a time and transform back into the original representation space. As we do this for several perturbations we will get a sense of what original variables are associated with the single bottleneck variable. Because of the way this is calculated we can get a sense of the nature of the relationship whether it is positive or negative as well as the magnitude. To limit the number of variables that are associated with a given bottleneck variable we can add a threshold value. 
 
 ## MNIST Results
-To give you a taste of what you get back here are some of the results when run on the MNIST dataset. The data was subdivided into 30 different groups using KMeans clustering and then had a GRAE model trained on each cluster we were interested in looking at.
+To give you a taste of what you get back here are some of the results when run on the MNIST dataset. The data was subdivided into 30 different groups using KMeans clustering and then had a GRAE model trained on each cluster we were interested in looking at. Below is an image of the average data point in the 24th partition.
+
 ![group_24_ave](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/group_24_average.JPG)
+
+As can be clearly seen, group 24 consists almost entirely of 2's.
