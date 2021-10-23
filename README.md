@@ -38,3 +38,4 @@ With the previously described architexture we can train an autoencoder on a loca
 
 ## MNIST Results
 To give you a taste of what you get back here are some of the results when run on the MNIST dataset. The data was subdivided into 30 different groups using KMeans clustering and then had a GRAE model trained on each cluster we were interested in looking at.
+![group_24_ave](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/group_24_average.JPG)
