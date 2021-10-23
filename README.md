@@ -37,8 +37,12 @@ Local Corex separates data into localized groups as explained in the previous se
 With the previously described architexture we can train an autoencoder on a local partition. Then we can take the average representation in the reduced representation space (bottleneck) and perturb just one dimension at a time and transform back into the original representation space. As we do this for several perturbations we will get a sense of what original variables are associated with the single bottleneck variable. Because of the way this is calculated we can get a sense of the nature of the relationship whether it is positive or negative as well as the magnitude. To limit the number of variables that are associated with a given bottleneck variable we can add a threshold value. 
 
 ## MNIST Results
-To give you a taste of what you get back here are some of the results when run on the MNIST dataset. The data was subdivided into 30 different groups using KMeans clustering and then had a GRAE model trained on each cluster we were interested in looking at. Below is an image of the average data point in the 24th partition.
+To give you a taste of what you get back here are some of the results when run on the MNIST dataset. The data was subdivided into 30 different groups using KMeans clustering and then had a GRAE model trained on each cluster we were interested in looking at. Below is an image of the average data points in each of the partitions
 
-![group_24_ave](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/group_24_average.JPG)
+![MNIST Groups](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/MNIST_groups.JPG)
 
-As can be clearly seen, group 24 consists almost entirely of 2's.
+Let's look at the variable interactions in group 24. We can look at the different dimensions of the manifold for this group by perturbing the values of the dimension in the bottleneck layer and then see how the original space variables change when these perturbed representations are transformed into the original input space. The first 3 dimensions of group 24 are shown below.
+
+![Group 24 first 3 dimensions](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/visual_of_first_3_dim_of_group_24.JPG)
+
+Each row here shows a dimension of the manifold. Each column shows the value of the perturbed dimension using quantiles of the data. Note that all the images in the middle column look the same since they are just the average image.
