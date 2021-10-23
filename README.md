@@ -1,23 +1,5 @@
 # LocalCorex
 
-# Todo List
-* Explain that it isn't published and as such source code is not available yet
-* Explain motivation
-  * Why do we care about variable interactions
-  * Why is this difficult to do when interactions change depending on where data is
-* Explain main concept
-  * Partitioning data
-  * Creating representations with functions to map between representations
-  * Perturbing one of the representations and transform into the other representation
-* Show some results
-  * MNIST
-  * FMNIST
-  * Synthetic Tree Data
-* Discuss what I'm currently working on and what additional applications it has
-  * Testing more kinds of relationships
-  * Data Augmentation borderline cases
-  * EDA tool for high-dimensional data
-
 ## Disclaimer
 Local Corex is an algorithm that I designed in collaboration with Dr. Kevin Moon (USU), Dr. Greg Steeg (USC), and Myrl Marmarelis (USC). Because this work is not yet published I have not yet included all of the source code used to generate the plots that you will see below. This will change as soon as it is published. 
 
@@ -51,3 +33,11 @@ When we look at which variables are varying the most for a given dimension we fi
 
 ![Group 24 related variables first 3 dimensions](https://github.com/tjkerby/LocalCorex/blob/main/MNIST/related_vars_first_3_dim_group_24.JPG)
 
+Image data is very nice for visualizing the interactions since you can essentially just plot the variables as pixels. This method works for other types of data types and we have tested it on scRNAseq data. 
+
+## Current & Future Work
+I'm currently working on testing this algorithm's ability to capture certain types of non-linear relationships. One of my collaborators, Myrl Marmarellis, is working on a way to select varaible interactions using all of the information in the bottleneck layer using partial derivatives between the bottleneck variables and the original variables, rather than using just a single dimension as proposed here. 
+
+Another potential avenue to experiment with this result is with data augmentation. If instead of getting a completely localized or homogenous group, you get a group with two differents classes and then run this method it is common for the differences to be encoded in one or more dimensions in the bottleneck. If you have labeled data and are interested in classification you can take boundary edge line cases and perturb them slightly while maintaining their class assignment and create additonal training points that are close to the boundary line between classes. Further work needs to be done to prove this.
+
+This is also a good method for exploring data in high-dimensions in a principled manner. This is especially the case when you are working with image data.
